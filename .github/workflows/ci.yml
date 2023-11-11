@@ -1,25 +1,17 @@
 name: Beautiful Jekyll CI
 on: [push, pull_request]
 
-env:
-  JEKYLL_PAT: ${{ secrets.PAT_KEY }}
-
 jobs:
   build:
     name: Build Jekyll
     runs-on: ubuntu-latest
     steps:
-      - name: Get token
-        id: get_token
-        uses: machine-learning-apps/actions-app-token@master
-        with:
-          APP_PEM: ${{ secrets.PAT_KEY }}
-          APP_ID: ${{ secrets.PAT_KEY }}
+
       - name: Checkout repository and submodules
         uses: actions/checkout@v3
         with:
           submodules: recursive
-          token: ${{ steps.get_token.outputs.app_token }}
+          token: ${{ secrets.PAT_KEY }}
 
       - name: Build the site in the jekyll/builder container
         run: |
