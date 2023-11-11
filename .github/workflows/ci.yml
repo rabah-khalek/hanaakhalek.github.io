@@ -9,7 +9,6 @@ jobs:
     name: Build Jekyll
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
 
       # based on https://github.com/actions/checkout/issues/116#issuecomment-573880976
       - name: Checkout submodules using a PAT
