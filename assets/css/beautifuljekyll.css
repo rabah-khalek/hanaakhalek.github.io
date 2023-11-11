@@ -479,16 +479,19 @@ footer .footer-custom-content {
 }
 
 .post-preview .post-title {
+  text-align: right;
   font-size: 1.875rem;
   margin-top: 0;
 }
 .post-preview .post-subtitle {
+  text-align: right;
   margin: 0;
   font-weight: 300;
   margin-bottom: 0.625rem;
 }
 .post-preview .post-meta,
 .post-heading .post-meta {
+  text-align: right;
   color: #808080;
   font-size: 1.125rem;
   font-style: italic;
@@ -508,10 +511,12 @@ footer .footer-custom-content {
   margin: 0 0.625rem;
 }
 .post-preview .post-entry {
+  text-align: right;
+  direction: rtl;
   width: 100%;
 }
 .post-preview .post-image {
-  float: right;
+  float: left;
   margin-left: 0.625rem;
   height: 12rem;
   width: 12rem;
@@ -526,9 +531,7 @@ footer .footer-custom-content {
   max-height: 100%;
   max-width: 100%;
 }
-.post-preview .post-image-short {
-  margin-top: -2.1875rem;
-}
+
 @media (max-width: 767px) {
   .post-preview .post-image {
     height: 9rem;
@@ -558,11 +561,15 @@ footer .footer-custom-content {
 }
 
 .post-preview .post-read-more {
-  font-weight: 800;
+  text-align: right;
+  direction: rtl;
+  color: #0d6aad;
 }
 
 @media (min-width: 768px) {
   .post-preview .post-title {
+    text-align: right;
+    direction: rtl;
     font-size: 2.25rem;
   }
 }
