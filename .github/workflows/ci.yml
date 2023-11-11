@@ -1,6 +1,9 @@
 name: Beautiful Jekyll CI
 on: [push, pull_request]
 
+env:
+  JEKYLL_PAT: ${{ secrets.PAT_KEY }}
+
 jobs:
   build:
     name: Build Jekyll
