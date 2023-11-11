@@ -1,6 +1,6 @@
-[submodule "_posts"]
-	path = _posts
-	url = git@github.com:rabah-khalek/hanaa-posts.git
 [submodule "assets/img"]
 	path = assets/img
 	url = git@github.com:rabah-khalek/hanaa-img.git
+[submodule "_posts"]
+	path = _posts
+	url = git@github.com:rabah-khalek/hanaa-posts.git
