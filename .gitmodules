@@ -1,0 +1,6 @@
+[submodule "_posts"]
+	path = _posts
+	url = https://github.com/rabah-khalek/hanaa-posts.git
+[submodule "assets/img"]
+	path = assets/img
+	url = https://github.com/rabah-khalek/hanaa-img.git
