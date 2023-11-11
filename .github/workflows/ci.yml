@@ -8,10 +8,10 @@ jobs:
     steps:
 
       - name: Checkout repository and submodules
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.3.0
         with:
-          submodules: recursive
           token: ${{ secrets.PAT_KEY }}
+          submodules: recursive
 
       - name: Build the site in the jekyll/builder container
         run: |
