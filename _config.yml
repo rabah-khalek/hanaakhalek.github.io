@@ -5,6 +5,22 @@
 ### the initial set up you won't need to come back to this file often.
 ###########################################################
 
+####################
+# Patreon Settings #
+####################
+
+patreon:
+  enabled: true
+  design: 'default' # Supports the following desings: default, fancy, minimal, streamlined, reversed, swapped
+  title: 'Example title'
+  metercolor: 'green' # Supports the following colors: red, green, orange, red nostripes, green nostripes, orange nostripes, blue nostripes
+  toptext: 'Example top text' # Text that appears in before the progress bar (optional)
+  bottomtext: 'Example bottom text' # Text that appears in after the progress bar (optional)
+  showgoaltext: true # Display the goal text?
+  showbutton: true # Display the "Become a patron" button?
+  username: 'Your username here'
+  default_lang: "en" # The default language to use (to avoid writing twice the same text from Patreon)
+
 ############################
 # --- Required options --- #
 ############################
@@ -99,7 +115,7 @@ share-links-active:
 url-pretty: "https://hanaakhalek.com"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
-excerpt_length: 20
+excerpt_length: 45
 
 # Whether or not to show an excerpt for every blog post in the feed page
 feed_show_excerpt: true
