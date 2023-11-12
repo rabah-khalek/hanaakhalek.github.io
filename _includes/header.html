@@ -16,7 +16,7 @@
   ></div>
 {% endif %}
 
-<header class="header-section {% if page.cover-img %}has-img{% endif %}">
+<header class="header-section {% if page.cover-img %}has-img{% endif %}" style="text-align: center;">
 <div class="intro-header {% if page.cover-img %} big-img {% endif %}">
   {% if page.cover-img or page.title %}
   <div class="container-md">
@@ -32,8 +32,8 @@
               <h2 class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</h2>
             {% endif %}
           {% endif %}
-          
-          {% if include.type == "post" %} 
+
+          {% if include.type == "post" %}
             {% if page.author %}
               By <strong>{{ page.author | strip_html }}</strong><br>
             {% endif%}
