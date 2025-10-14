@@ -2,17 +2,21 @@ name: Beautiful Jekyll CI
 on: [push, pull_request]
 
 env:
-  JEKYLL_PAT: ${{ secrets.PAT_KEY }}
+  JEKYLL_PAT: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
     name: Build Jekyll
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
       - name: Checkout repository and submodules
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT_KEY }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
       - uses: ruby/setup-ruby@v1
         with:

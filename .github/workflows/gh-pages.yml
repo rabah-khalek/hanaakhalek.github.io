@@ -6,16 +6,20 @@ on:
       - master # or master before October 2020
 
 env:
-  JEKYLL_PAT: ${{ secrets.PAT_KEY }}
+  JEKYLL_PAT: ${{ secrets.GITHUB_TOKEN }}
 
 
 jobs:
   github-pages:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT_KEY }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
 
       - uses: actions/cache@v4
