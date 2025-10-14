@@ -1,35 +1,111 @@
 ---
 layout: page
 title: مقابلات 
-subtitle: Null
+subtitle: لقاءات تلفزيونية وإذاعية
 ---
 
-<h1 style="text-align: center;"> Télé Lumière مقابلة على تلفزيون  </h1>
-<div style="text-align: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8lq2YdrhSms" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<div class="interviews-grid">
 
-<h1 style="text-align: center;"> مقابلة على قناة اليوم مع الناقد أحمد بزون </h1>
-<div style="text-align: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DSIGIcQCNac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+  <div class="interview-card" data-type="tv">
+    <div class="interview-header">
+      <div class="interview-icon">
+        <i class="fas fa-tv"></i>
+      </div>
+      <h3 class="interview-title">مقابلة على تلفزيون Télé Lumière</h3>
+      <!--<div class="interview-badge tv-badge">تلفزيون</div>-->
+    </div>
+    <div class="interview-body">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/8lq2YdrhSms" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
-<h1 style="text-align: center;">  مقابلة على تلفزيون لبنان </h1>
-<div style="text-align: center;">
-<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FTL.ahlasabah%2Fvideos%2F547199892750797%2F&show_text=0&width=560" width="560" height="448" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
-</div>
+  <div class="interview-card" data-type="tv">
+    <div class="interview-header">
+      <div class="interview-icon">
+        <i class="fas fa-tv"></i>
+      </div>
+      <h3 class="interview-title">مقابلة على قناة اليوم مع الناقد أحمد بزون</h3>
+      <!--<div class="interview-badge tv-badge">تلفزيون</div>-->
+    </div>
+    <div class="interview-body">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/DSIGIcQCNac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
-<h1 style="text-align: center;">  مقابلة في إذاعة لبنان </h1>
-<div style="text-align: center;">
-<a href="http://www.radioliban.gov.lb/ar/programs/معنا-الاثنين-احلى#.XZwaa4iK0TI.whatsapp"><img src="../assets/img/interviews/Radio-Liban.jpg" alt="drawing" width="560"/></a>
-</div>
+  <div class="interview-card" data-type="tv">
+    <div class="interview-header">
+      <div class="interview-icon">
+        <i class="fas fa-tv"></i>
+      </div>
+      <h3 class="interview-title">مقابلة على تلفزيون لبنان</h3>
+      <!--<div class="interview-badge tv-badge">تلفزيون</div>-->
+    </div>
+    <div class="interview-body">
+      <div class="video-wrapper facebook-video">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FTL.ahlasabah%2Fvideos%2F547199892750797%2F&show_text=0&width=560" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
-<h1 style="text-align: center;">  مقابلة في إذاعة صوت لبنان </h1>
-<div style="text-align: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HH6-Ph2uGQ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+  <div class="interview-card" data-type="radio">
+    <div class="interview-header">
+      <div class="interview-icon">
+        <i class="fas fa-microphone-alt"></i>
+      </div>
+      <h3 class="interview-title">مقابلة في إذاعة لبنان</h3>
+      <!--<div class="interview-badge radio-badge">إذاعة</div>-->
+    </div>
+    <div class="interview-body">
+      <div class="interview-image-wrapper">
+        <a href="http://www.radioliban.gov.lb/ar/programs/معنا-الاثنين-احلى" target="_blank" class="interview-link">
+          <img src="../assets/img/interviews/Radio-Liban.jpg" alt="إذاعة لبنان" loading="lazy">
+          <div class="interview-overlay">
+            <i class="fas fa-external-link-alt"></i>
+            <span>استمع للمقابلة</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 
-<h1 style="text-align: center;">  مقابلة في إذاعة الشرق </h1>
-<div style="text-align: center;">
-<a href="https://www.youtube.com"><img src="../assets/img/interviews/Voice-of-East.jpg" alt="drawing" width="560"/></a>
+  <div class="interview-card" data-type="radio">
+    <div class="interview-header">
+      <div class="interview-icon">
+        <i class="fas fa-microphone-alt"></i>
+      </div>
+      <h3 class="interview-title">مقابلة في إذاعة صوت لبنان</h3>
+      <!--<div class="interview-badge radio-badge">إذاعة</div>-->
+    </div>
+    <div class="interview-body">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/HH6-Ph2uGQ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="interview-card" data-type="radio">
+    <div class="interview-header">
+      <div class="interview-icon">
+        <i class="fas fa-microphone-alt"></i>
+      </div>
+      <h3 class="interview-title">مقابلة في إذاعة الشرق</h3>
+      <!--<div class="interview-badge radio-badge">إذاعة</div>-->
+    </div>
+    <div class="interview-body">
+      <div class="interview-image-wrapper">
+        <a href="https://www.youtube.com" target="_blank" class="interview-link">
+          <img src="../assets/img/interviews/Voice-of-East.jpg" alt="إذاعة الشرق" loading="lazy">
+          <div class="interview-overlay">
+            <i class="fas fa-external-link-alt"></i>
+            <span>استمع للمقابلة</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </div>

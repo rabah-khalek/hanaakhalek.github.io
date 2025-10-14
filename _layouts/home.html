@@ -26,63 +26,49 @@ layout: page
       {% endcapture %}
       {% assign thumbnail=thumbnail | strip %}
 
-      {% if site.feed_show_excerpt == false %}
       {% if thumbnail != "" %}
-      <div class="post-image post-image-normal">
+      <div class="post-image">
         <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
-          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
-        </a>
-      </div>
-      {% endif %}
-      {% endif %}
-
-      {% if thumbnail != "" %}
-      <div class="post-image post-image-short">
-        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
-          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+          <img src="{{ thumbnail | absolute_url }}" alt="{{ post.title }}" loading="lazy">
         </a>
       </div>
       {% endif %}
 
+      <div class="post-content-wrapper">
+        <a href="{{ post.url | absolute_url }}" style="text-decoration: none;">
+          <h2 class="post-title">{{ post.title | strip_html }}</h2>
 
-      <a href="{{ post.url | absolute_url }}">
-        <h2 class="post-title">{{ post.title | strip_html }}</h2>
-
-        {% if post.subtitle %}
-          <h3 class="post-subtitle">
-          {{ post.subtitle | strip_html }}
-          </h3>
-        {% endif %}
-      </a>
-
-      {% if post.author %}
-        <span>By <strong>{{ post.author | strip_html }}</strong></span>
-      {% endif %}
-      <p class="post-meta">
-        {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
-        {{ post.date | date: date_format }}
-      </p>
-
-      {% if thumbnail != "" %}
-      <div class="post-image post-image-small">
-        <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
-          <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+          {% if post.subtitle %}
+            <h3 class="post-subtitle">{{ post.subtitle | strip_html }}</h3>
+          {% endif %}
         </a>
+
+        <p class="post-meta">
+          <i class="fas fa-calendar" style="margin-left: 0.5rem;"></i>
+          {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+          {{ post.date | date: date_format }}
+          {% if post.author %}
+            <span style="margin: 0 0.5rem;">•</span>
+            <i class="fas fa-user" style="margin-left: 0.5rem;"></i>
+            <strong>{{ post.author | strip_html }}</strong>
+          {% endif %}
+        </p>
+
+        {% unless site.feed_show_excerpt == false %}
+        <div class="post-entry">
+          {% assign excerpt_length = site.excerpt_length | default: 50 %}
+          {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
+          {% assign excerpt_word_count = post.excerpt | number_of_words %}
+          {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
+            <br><br>
+            <a href="{{ post.url | absolute_url }}" class="post-read-more">
+              اقرأ المزيد
+              <i class="fas fa-arrow-left"></i>
+            </a>
+          {% endif %}
+        </div>
+        {% endunless %}
       </div>
-      {% endif %}
-
-      {% unless site.feed_show_excerpt == false %}
-
-
-      <div class="post-entry">
-        {% assign excerpt_length = site.excerpt_length | default: 50 %}
-        {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
-        {% assign excerpt_word_count = post.excerpt | number_of_words %}
-        {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
-          <a href="{{ post.url | absolute_url }}" class="post-read-more">[اقرأ المزيد]</a>
-        {% endif %}
-      </div>
-      {% endunless %}
 
       <!-- {% if site.feed_show_tags != false and post.tags.size > 0 %}
       <div class="blog-tags">

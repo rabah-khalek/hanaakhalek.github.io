@@ -73,8 +73,9 @@ social-network-links:
 #  twitter: daattali
 #  patreon: DeanAttali
 #  youtube: c/daattali
+#  whatsapp: 15551212
 #  medium: yourname
-#  reddit: yourname
+#  reddit: yourname or r/yoursubreddit
 #  linkedin: daattali
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
@@ -95,6 +96,9 @@ social-network-links:
 #  kaggle: yourname
 #  hackerrank: yourname
 #  gitlab: yourname
+#  itchio: yourname
+#  untappd: yourname
+#  strava: youruserid
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
@@ -109,10 +113,15 @@ share-links-active:
   twitter: false
   facebook: true
   linkedin: false
+  vk: false
+  reddit: false
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
 url-pretty: "https://hanaakhalek.com"
+
+# Add the website title to the title of every page
+title-on-all-pages: true
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 45
@@ -142,18 +151,20 @@ navbar-var-length: false
 ######################################
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
+# Sophisticated, classy color scheme for artist portfolio
+# Palette: Deep Teal, Warm Gold, Elegant Charcoal, Soft Cream
 
-navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
-navbar-border-col: "#DDDDDD"
-page-col: "#FFFFFF"
-text-col: "#404040"
-link-col: "#008AFF"
-hover-col: "#0085A1"
-footer-col: "#EAEAEA"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
-footer-hover-col: "#0085A1"
+page-col: "#F8F6F3"
+text-col: "#2D3436"
+link-col: "#16697A"
+hover-col: "#0E4C59"
+navbar-col: "#FFFFFF"
+navbar-text-col: "#2D3436"
+navbar-border-col: "#E8E4DF"
+footer-col: "#F8F6F3"
+footer-text-col: "#6C757D"
+footer-link-col: "#2D3436"
+footer-hover-col: "#16697A"
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
@@ -166,12 +177,12 @@ footer-hover-col: "#0085A1"
 #mobile-theme-col: "#0085A1"
 
 # For any extra visual customization, you can include additional CSS files in every page on your site. List any custom CSS files here
-#site-css:
-#  - "/assets/css/custom-styles.css"
+site-css:
+  - "/assets/css/custom-modern.css"
 
 # If you have common JavaScript files that should be included in every page, list them here
-#site-js:
-#  - "/assets/js/custom-script.js"
+site-js:
+  - "/assets/js/custom-modern.js"
 
 #################################
 # --- Web Analytics Section --- #
@@ -243,14 +254,14 @@ disqus: "hanaa"
 # See more details about giscus and each of the following parameters at https://giscus.app
 #giscus:
 #  hostname: giscus.app # Replace with your giscus instance's hostname if self-hosting
-#  repository: # GitHub username/repository eg. "daattali/beautiful-jekyll"
-#  repository-id: # ID of your repository, retrieve this info from https://giscus.app
+#  repository: rabah-khalek/hanaakhalek.github.io # GitHub username/repository
+#  repository-id: MDEwOlJlcG9zaXRvcnkyMTM2NDE3MDg= # ID of your repository, retrieve this info from https://giscus.app
 #  category: Announcements # Category name of your GitHub Discussion posts
-#  category-id: # ID of your category, retrieve this info from https://giscus.app
+#  category-id: DIC_kwDODLvp7M4CwpWK # ID of your category, retrieve this info from https://giscus.app
 #  mapping: pathname
 #  reactions-enabled: 1
 #  emit-metadata: 0
-#  theme: light
+#  theme: https://hanaakhalek.com/assets/css/giscus-custom-theme.css
 
 ################
 # --- Misc --- #

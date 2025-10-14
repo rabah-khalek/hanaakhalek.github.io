@@ -1,0 +1,149 @@
+---
+layout: page
+---
+
+<style>
+/* Modern home page enhancements */
+.home-intro {
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.home-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2C3E50;
+    font-family: var(--arabic-header-font);
+}
+
+.home-intro p {
+    font-size: 1.2rem;
+    color: #6C757D;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.posts-list {
+    padding: 0;
+}
+</style>
+
+{{ content }}
+
+{% assign posts = paginator.posts | default: site.posts %}
+
+<!-- Modern posts grid layout -->
+<div class="posts-grid">
+  {% for post in posts %}
+  <article class="post-preview fade-in">
+    {%- capture thumbnail -%}
+      {% if post.thumbnail-img %}
+        {{ post.thumbnail-img }}
+      {% elsif post.cover-img %}
+        {% if post.cover-img.first %}
+          {{ post.cover-img[0].first.first }}
+        {% else %}
+          {{ post.cover-img }}
+        {% endif %}
+      {% else %}
+      {% endif %}
+    {% endcapture %}
+    {% assign thumbnail=thumbnail | strip %}
+
+    {% if thumbnail != "" %}
+    <div class="post-image">
+      <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
+        <img src="{{ thumbnail | absolute_url }}" alt="{{ post.title }}" loading="lazy">
+      </a>
+    </div>
+    {% endif %}
+
+    <div class="post-content" style="padding: 1.5rem;">
+      <a href="{{ post.url | absolute_url }}" style="text-decoration: none;">
+        <h2 class="post-title" style="color: #2C3E50; margin-bottom: 0.5rem;">
+          {{ post.title | strip_html }}
+        </h2>
+
+        {% if post.subtitle %}
+          <h3 class="post-subtitle" style="color: #6C757D; font-size: 1.1rem; font-weight: 400; margin-bottom: 1rem;">
+            {{ post.subtitle | strip_html }}
+          </h3>
+        {% endif %}
+      </a>
+
+      <p class="post-meta" style="margin-bottom: 1rem;">
+        {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+        <i class="fas fa-calendar-alt" style="margin-left: 0.5rem;"></i>
+        {{ post.date | date: date_format }}
+        {% if post.author %}
+          <span style="margin: 0 0.5rem;">•</span>
+          <i class="fas fa-user" style="margin-left: 0.5rem;"></i>
+          <strong>{{ post.author | strip_html }}</strong>
+        {% endif %}
+      </p>
+
+      {% unless site.feed_show_excerpt == false %}
+      <div class="post-entry" style="color: #555; line-height: 1.6; margin-bottom: 1rem;">
+        {% assign excerpt_length = site.excerpt_length | default: 50 %}
+        {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
+      </div>
+      {% endunless %}
+
+      {% assign excerpt_word_count = post.excerpt | number_of_words %}
+      {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
+        <a href="{{ post.url | absolute_url }}" class="post-read-more">
+          اقرأ المزيد
+          <i class="fas fa-arrow-left" style="margin-right: 0.5rem;"></i>
+        </a>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+
+{% if paginator.total_pages > 1 %}
+<nav aria-label="Page navigation" style="margin-top: 4rem;">
+  <ul class="pagination main-pager justify-content-center">
+    {% if paginator.previous_page %}
+    <li class="page-item previous">
+      <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}">
+        <i class="fas fa-arrow-right" alt="Newer Posts" style="margin-left: 0.5rem;"></i>
+        <span class="d-none d-sm-inline-block">مقالات أحدث</span>
+      </a>
+    </li>
+    {% endif %}
+    
+    <li class="page-item disabled" style="margin: 0 1rem;">
+      <span class="page-link" style="background: transparent; border: none; color: #6C757D;">
+        صفحة {{ paginator.page }} من {{ paginator.total_pages }}
+      </span>
+    </li>
+    
+    {% if paginator.next_page %}
+    <li class="page-item next">
+      <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}">
+        <span class="d-none d-sm-inline-block">مقالات أقدم</span>
+        <i class="fas fa-arrow-left" alt="Older Posts" style="margin-right: 0.5rem;"></i>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
