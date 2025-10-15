@@ -108,4 +108,40 @@ subtitle: لقاءات تلفزيونية وإذاعية
     </div>
   </div>
 
+  <div class="interview-card" data-type="tv">
+    <div class="interview-header">
+      <div class="interview-icon">
+        <i class="fas fa-tv"></i>
+      </div>
+      <h3 class="interview-title">مقابلة تلفزيونية</h3>
+      <!--<div class="interview-badge tv-badge">تلفزيون</div>-->
+    </div>
+    <div class="interview-body">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/aV88zLCoVaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="interview-card" data-type="radio">
+    <div class="interview-header">
+      <div class="interview-icon">
+        <i class="fas fa-microphone-alt"></i>
+      </div>
+      <h3 class="interview-title">مقابلة في مونت كارلو الدولية</h3>
+      <!--<div class="interview-badge radio-badge">إذاعة</div>-->
+    </div>
+    <div class="interview-body">
+      <div class="interview-image-wrapper">
+        <a href="https://mc-d.co/1Yub" target="_blank" class="interview-link">
+          <img src="../assets/img/interviews/monte-carlo.jpg" alt="مونت كارلو الدولية" loading="lazy">
+          <div class="interview-overlay">
+            <i class="fas fa-external-link-alt"></i>
+            <span>استمع للمقابلة</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </div>
