@@ -470,6 +470,34 @@ article .row a,
     width: 100%;
 }
 
+/* Ensure blog-tags links are never affected by row/container rules */
+.blog-tags,
+.col .blog-tags,
+[class*="col-"] .blog-tags,
+.container-fluid .blog-tags,
+.container-md .blog-tags {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.blog-tags a,
+.blog-tags a:link,
+.blog-tags a:visited,
+.blog-tags a:hover,
+.blog-tags a:active,
+.col .blog-tags a,
+[class*="col-"] .blog-tags a,
+.container-fluid .blog-tags a,
+.container-md .blog-tags a {
+    display: inline-flex !important;
+    width: auto !important;
+    max-width: none !important;
+    flex-shrink: 0 !important;
+}
+
 #paintings-container img:hover,
 article .row img:hover,
 .post-content .row img:hover,
