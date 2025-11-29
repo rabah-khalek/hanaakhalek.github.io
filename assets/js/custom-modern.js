@@ -351,8 +351,8 @@
 
     // === AMBIENT PAINTINGS BACKGROUND - FULL PAGE MOSAIC ===
     const createAmbientPaintings = () => {
-        // Only on wide screens
-        if (window.innerWidth < 1400) return;
+        // Enable on screens wider than tablets
+        if (window.innerWidth < 992) return;
 
         // All available paintings from your posts (verified paths)
         const paintings = [

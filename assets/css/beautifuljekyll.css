@@ -42,6 +42,8 @@ body {
   {% if site.page-img %}
   background-image: url({{ site.page-img | relative_url }});
   background-attachment: fixed;
+  background-repeat: repeat;
+  background-size: auto;
   {% endif %}
   overflow-wrap: break-word;
   min-height: 100vh;
@@ -550,28 +552,8 @@ footer .footer-custom-content {
   direction: rtl;
   margin: 0 0.625rem 0.625rem 0;
 }
-.post-preview .post-image {
-  float: left;
-  margin: 0 0.625rem 0 0.625rem;
-  height: 15rem;
-  width: 15rem;
-}
-.post-preview .post-image {
-  filter: grayscale(40%);
-}
-.post-preview .post-image:hover {
-  filter: grayscale(0%);
-}
-.post-preview .post-image img {
-  max-height: 100%;
-  max-width: 100%;
-}
 
 @media (max-width: 767px) {
-  .post-preview .post-image {
-    height: 9rem;
-    width: 9rem;
-  }
   .post-preview .post-image-short {
     margin-top: 0;
   }
