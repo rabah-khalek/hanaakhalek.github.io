@@ -1,0 +1,5 @@
+{% if site.umami.website_id and site.umami.src %}
+<!-- Umami Analytics -->
+<script defer src="{{ site.umami.src }}" data-website-id="{{ site.umami.website_id }}"></script>
+<!-- End Umami Analytics -->
+{% endif %}

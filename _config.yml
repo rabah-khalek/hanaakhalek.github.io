@@ -210,6 +210,11 @@ gtag: "UA-120641435-2"
 # you should switch to using the `gtag` field above instead.
 #google_analytics: "UA-XXXXXXXX-X"
 
+# Umami Analytics
+umami:
+  website_id: "be0c831a-41cf-4c8e-a493-fe3ba09506bf"
+  src: "https://cloud.umami.is/script.js"
+
 ####################
 # --- Comments --- #
 ####################
